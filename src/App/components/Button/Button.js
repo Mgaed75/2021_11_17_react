@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Button.css";
+import style from "./Button.module.css";
 
 import PropTypes from "prop-types";
 
@@ -13,7 +13,7 @@ const Button = (props) => {
   console.log(props);
   return (
     <button
-      className="Button"
+      className={style.Button}
       style={{backgroundColor:props.bgColor, color:props.color} }
       onClick={(evt) => {
         // évènement géré par le composant pas renvoyé au parent
