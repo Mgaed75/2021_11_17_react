@@ -16,7 +16,7 @@ const Button = (props) => {
       className="Button"
       style={{backgroundColor:props.bgColor, color:props.color} }
       onClick={(evt) => {
-        // evenement géré par le composant pas renvoye au parent
+        // évènement géré par le composant pas renvoyé au parent
         props.onButtonClicked();
       }}
     >
