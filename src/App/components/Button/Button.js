@@ -28,8 +28,13 @@ const Button = (props) => {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   onButtonClicked: PropTypes.func.isRequired,
-  bgColor: PropTypes.string,
-  color: PropTypes.string,
+  bgColor: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
 };
+
+Button.defaultProps={
+  color: "white",
+  bgColor: "greenyellow"
+}
 
 export default Button;

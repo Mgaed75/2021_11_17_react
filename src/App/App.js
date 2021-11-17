@@ -14,7 +14,7 @@ function App() {
         }}
       />
 
-      <Button text="Cancel" />
+      <Button text="Cancel" color="red"/>
 
       <Button
         text="User ne clique pas ICI"
