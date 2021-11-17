@@ -4,9 +4,19 @@ import Button from "./components/Button/Button";
 class App extends React.Component {
   counter = 0;
 
-  // Constructeur par défaut
+  // Constructeur
   constructor(props) {
     super(props);
+    this.state={counter:0, value2:0}
+  }
+
+  /**
+   * Une fois que le composant a été chargé
+   * 3arguments (1er arg : props,  2e arg: ancienne valeur d'état)
+  */
+  componentDidUpdate(){
+    // Permet d'afficher du style css dans les logs console
+    console.log("%c%s", "font-size:24pt;color: red; background-color: skyblue; border: 1px solid black", "Le changement est prêt et effectif : " + this.state.counter);
   }
 
   /***
@@ -15,23 +25,23 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        counter:{this.counter}
+        counter:{this.state.counter}
         <Button
           text="Soustraire 1"
           onButtonClicked={() => {
-            this.counter--;
-            console.log(this.counter);
+            this.setState({counter:this.state.counter-1})
+            console.log(this.state);
           }}
           bgColor="tomato"
-        ></Button>
+        />
         <Button
           text="Ajouter 1"
           onButtonClicked={() => {
-            this.counter++;
-            console.log(this.counter);
+            this.setState({counter:this.state.counter+1})
+            console.log(this.state);
           }}
           bgColor="green"
-        ></Button>
+        />
       </div>
     );
   }
