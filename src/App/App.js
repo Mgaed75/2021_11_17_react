@@ -12,6 +12,7 @@ function App() {
         onButtonClicked={(arg) => {
           alert("click sur button");
         }}
+        style={{fontSize:'45pt'}}
       />
 
       <Button text="Cancel" color="red"/>
