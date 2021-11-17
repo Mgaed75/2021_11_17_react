@@ -7,15 +7,16 @@ import Button from './components/Button/Button'
 function App() {
   return (
     <div className="App">
-      <Button />
+    
+      <Button text="OK"/>
 
-      <Button />
+      <Button text="Cancel"/>
       
-      <Button />
+      <Button text="User ne clique pas ICI"/>
       
-      <Button />
+      <Button text="Je sais quand tu vas quand même cliquer"/>
       
-      <Button />
+      <Button text="For Test"/>
     </div>
   );
 }
