@@ -3,4 +3,12 @@
     color: white;
     font-weight: 900;
     padding: 10px 15px;
+    border-radius: 7px;
+    box-shadow: 15px 15px 25px grey;
+    border: none;
+    margin: 5px 12px;
+}
+
+.Button:hover{
+    box-shadow: 10px 10px 25px grey;
 }
