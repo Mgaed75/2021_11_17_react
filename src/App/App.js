@@ -18,7 +18,9 @@ function App() {
 
       <Button
         text="User ne clique pas ICI"
+        bgColor="tomato"
         onButtonClicked={(arg) => {
+          console.log(arg)
           alert("Le user a osé cliquer, il est vilain celui-ci ! ");
         }}
       />

@@ -14,7 +14,9 @@ const Button = (props) => {
   return (
     <button
       className="Button"
+      style={{backgroundColor:props.bgColor, color:props.color} }
       onClick={(evt) => {
+        // evenement géré par le composant pas renvoye au parent
         props.onButtonClicked();
       }}
     >
@@ -26,6 +28,8 @@ const Button = (props) => {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   onButtonClicked: PropTypes.func.isRequired,
+  bgColor: PropTypes.string,
+  color: PropTypes.string,
 };
 
 export default Button;
