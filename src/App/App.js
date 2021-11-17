@@ -7,16 +7,20 @@ class App extends React.Component {
   // Constructeur
   constructor(props) {
     super(props);
-    this.state={counter:0, value2:0}
+    this.state = { counter: 0, value2: 0 };
   }
 
   /**
    * Une fois que le composant a été chargé
    * 3arguments (1er arg : props,  2e arg: ancienne valeur d'état)
-  */
-  componentDidUpdate(){
+   */
+  componentDidUpdate() {
     // Permet d'afficher du style css dans les logs console
-    console.log("%c%s", "font-size:24pt;color: red; background-color: skyblue; border: 1px solid black", "Le changement est prêt et effectif : " + this.state.counter);
+    console.log(
+      "%c%s",
+      "font-size:24pt;color: red; background-color: skyblue; border: 1px solid black",
+      "Le changement est prêt et effectif : " + this.state.counter
+    );
   }
 
   /***
@@ -29,7 +33,7 @@ class App extends React.Component {
         <Button
           text="Soustraire 1"
           onButtonClicked={() => {
-            this.setState({counter:this.state.counter-1})
+            this.setState({ counter: this.state.counter - 1 });
             console.log(this.state);
           }}
           bgColor="tomato"
@@ -37,7 +41,7 @@ class App extends React.Component {
         <Button
           text="Ajouter 1"
           onButtonClicked={() => {
-            this.setState({counter:this.state.counter+1})
+            this.setState({ counter: this.state.counter + 1 });
             console.log(this.state);
           }}
           bgColor="green"
