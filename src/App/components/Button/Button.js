@@ -67,8 +67,8 @@ Button.propTypes = {
 
 // Propriétés par défaut
 Button.defaultProps = {
-  color: "white",
-  bgColor: "greenyellow",
+  color: "#FFFFFF",
+  bgColor: "#ADFF2F",
 };
 
 export default Button;

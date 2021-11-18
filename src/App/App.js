@@ -15,8 +15,8 @@ class App extends React.Component {
         x: 390,
         y: 530,
         fontSize: 28,
-        color: "tomato",
-        fontWeigh: "900",
+        color: "#FF6347",
+        fontWeight: "900",
         underline: true,
         italic: true,
         frameX: 0,
@@ -43,7 +43,7 @@ class App extends React.Component {
     // Permet d'afficher du style css dans les logs console
     console.log(
       "%c%s",
-      "font-size:24pt;color: red; background-color: skyblue; border: 1px solid black",
+      "font-size:24pt;color: #FF0000; background-color: #87CEEB; border: 1px solid #000000",
       "Le changement est prêt et effectif : " + this.state.counter
     );
   }
