@@ -5,12 +5,34 @@ import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 class App extends React.Component {
-  counter = 0;
-
   // Constructeur
   constructor(props) {
     super(props);
-    this.state = { counter: 0, value2: 0 };
+    this.state = {
+      current: {
+        titre: "mon 1er même",
+        text: "stop la triche",
+        x: 390,
+        y: 530,
+        fontSize: 28,
+        color: "tomato",
+        fontWeigh: "900",
+        underline: true,
+        italic: true,
+        frameX: 0,
+        frameY: 0,
+        imageId: 0,
+      },
+      image: [
+        {
+          id: 0,
+          url: "img/meme1.jpg",
+          titre: "meme1",
+          h: 778,
+          w: 736,
+        },
+      ],
+    };
   }
 
   /**
@@ -36,31 +58,17 @@ class App extends React.Component {
         <div className="App">
           <FlexLayout>
             <MemeViewer
-              meme={{
-                titre: "mon 1er même",
-                text: "stop la triche",
-                x: 390,
-                y: 530,
-                fontSize: 28,
-                color: "tomato",
-                fontWeigh: "900",
-                underline: true,
-                italic: true,
-                frameX: 0,
-                frameY: 0,
-              }}
-              image={{
-                id: 0,
-                url: "img/meme1.jpg",
-                titre: "meme1",
-                h: 778,
-                w: 736,
-              }}
+              meme={this.state.current}
+              image={this.state.image.find(
+                (ele) => ele.id === this.state.current.imageId
+              )}
             />
-            <MemeForm />
+            <MemeForm
+              meme={this.state.current}
+              onMemeChange={(meme) => this.setState({ current: meme })}
+              images={this.state.image}
+            />
           </FlexLayout>
-          {/* Exercice n°2*/}
-          counter:{this.state.counter}
         </div>
       </>
     );
