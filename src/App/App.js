@@ -30,16 +30,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        counter:{this.state.counter}
         <MemeViewer
           meme={{
             titre: "mon 1er même",
-            text: "stop la tricher",
-            x: 200,
-            y: 600,
-            fontSize: 18,
+            text: "stop la triche",
+            x: 390,
+            y: 530,
+            fontSize: 28,
             color: "tomato",
-            fontWeigh: "200",
+            fontWeigh: "900",
             underline: true,
             italic: true,
             frameX: 0,
@@ -53,6 +52,10 @@ class App extends React.Component {
             w: 736,
           }}
         />
+
+        {/* Exercice n°2*/}
+
+        counter:{this.state.counter}
         <Button
           text="Soustraire 1"
           onButtonClicked={() => {
