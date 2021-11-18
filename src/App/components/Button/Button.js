@@ -18,7 +18,7 @@ const Button = (props) => {
   useEffect(() => {
     console.log(clicked);
     // Si le bouton n'est pas cliqué, on fait rien
-    if(!clicked.state){
+    if (!clicked.state) {
       return;
     }
     setTimeout(() => {
@@ -42,6 +42,7 @@ const Button = (props) => {
         color: props.color,
         ...props.style,
       }}
+      type={props.type}
       onClick={(evt) => {
         setClicked({ ...clicked, state: true });
 
@@ -61,6 +62,7 @@ Button.propTypes = {
   bgColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   style: PropTypes.object,
+  type: PropTypes.string,
 };
 
 // Propriétés par défaut

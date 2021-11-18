@@ -1,6 +1,5 @@
 import React from "react";
 
-import Button from "./components/Button/Button";
 import FlexLayout from "./components/FlexLayout/FlexLayout";
 import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
@@ -62,22 +61,6 @@ class App extends React.Component {
           </FlexLayout>
           {/* Exercice n°2*/}
           counter:{this.state.counter}
-          <Button
-            text="Soustraire 1"
-            onButtonClicked={() => {
-              this.setState({ counter: this.state.counter - 1 });
-              console.log(this.state);
-            }}
-            bgColor="tomato"
-          />
-          <Button
-            text="Ajouter 1"
-            onButtonClicked={() => {
-              this.setState({ counter: this.state.counter + 1 });
-              console.log(this.state);
-            }}
-            bgColor="green"
-          />
         </div>
       </>
     );
