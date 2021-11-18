@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import style from "./Button.module.css";
 
@@ -14,6 +14,23 @@ const Button = (props) => {
     state: false,
     autreValue: "Bonjour les ami.e.s",
   });
+
+  useEffect(() => {
+    console.log(clicked);
+    // Si le bouton n'est pas cliqué, on fait rien
+    if(!clicked.state){
+      return;
+    }
+    setTimeout(() => {
+      setClicked({ ...clicked, state: false });
+    }, 300);
+
+    // retourne la fonction de "componentWillUnmount"
+    // return () => {
+    //   cleanup;
+    // };
+  }, [clicked]); // lorsqu'il va être monté et changé d'état
+
   console.log(props);
 
   return (
@@ -27,9 +44,7 @@ const Button = (props) => {
       }}
       onClick={(evt) => {
         setClicked({ ...clicked, state: true });
-        setTimeout(() => {
-          setClicked({ ...clicked, state: false });
-        }, 300);
+
         // évènement géré par le composant pas renvoyé au parent
         props.onButtonClicked();
       }}
