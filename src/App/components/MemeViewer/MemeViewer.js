@@ -8,7 +8,10 @@ const MemeViewer = (props) => (
   </div>
 );
 
-MemeViewer.propTypes = {};
+MemeViewer.propTypes = {
+  meme: PropTypes.object.isRequired,
+  image: PropTypes.object,
+};
 
 MemeViewer.defaultProps = {};
 
