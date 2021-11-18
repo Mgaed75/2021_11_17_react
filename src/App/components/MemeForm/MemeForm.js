@@ -24,10 +24,21 @@ function MemeForm(props) {
           id="f_titre"
           placeholder="Un titre?"
           value={props.meme.titre}
+          onChange={(evt) =>
+            props.onMemeChange({ ...props.meme, titre: evt.target.value })
+          }
         />
         <hr />
         <h2>Image</h2>
-        <select value={props.meme.imageId}>
+        <select
+          value={props.meme.imageId}
+          onChange={(evt) =>
+            props.onMemeChange({
+              ...props.meme,
+              imageId: Number(evt.target.value),
+            })
+          }
+        >
           <option value="-1">Aucune</option>
           {props.images.map((ele, i) => (
             <option value={ele.id}>{ele.titre}</option>
@@ -39,6 +50,9 @@ function MemeForm(props) {
           type="text"
           placeholder="Formation ReactJS"
           value={props.meme.text}
+          onChange={(evt) =>
+            props.onMemeChange({ ...props.meme, text: evt.target.value })
+          }
         />
         <div className={style.half}>
           <label htmlFor="f_text_x">x:</label>
@@ -48,6 +62,9 @@ function MemeForm(props) {
             className={style.smallInput}
             min="0"
             value={props.meme.x}
+            onChange={(evt) =>
+              props.onMemeChange({ ...props.meme, x: evt.target.value })
+            }
           />
           <label htmlFor="f_text_y">y:</label>
           <input
@@ -55,6 +72,9 @@ function MemeForm(props) {
             type="number"
             className={style.smallInput}
             value={props.meme.y}
+            onChange={(evt) =>
+              props.onMemeChange({ ...props.meme, y: evt.target.value })
+            }
           />
         </div>
         <hr />
@@ -64,6 +84,9 @@ function MemeForm(props) {
           type="color"
           className={style.smallInput}
           value={props.meme.color}
+          onChange={(evt) =>
+            props.onMemeChange({ ...props.meme, color: evt.target.value })
+          }
         />
         <hr />
         <h2>Décorations</h2>
@@ -74,6 +97,9 @@ function MemeForm(props) {
           className={style.smallInput}
           min="0"
           value={props.meme.fontSize}
+          onChange={(evt) =>
+            props.onMemeChange({ ...props.meme, fontSize: evt.target.value })
+          }
         />
         <hr />
         <label htmlFor="f_font_weight">Font-Weight:</label>
@@ -81,7 +107,13 @@ function MemeForm(props) {
           id="f_font_weight"
           type="number"
           className={style.smallInput}
+          min="100"
+          max="900"
+          step="100"
           value={props.meme.fontWeight}
+          onChange={(evt) =>
+            props.onMemeChange({ ...props.meme, fontWeight: evt.target.value })
+          }
         />
         <hr />
 
@@ -90,10 +122,20 @@ function MemeForm(props) {
             id="f_underline"
             type="checkbox"
             checked={props.meme.underline}
+            onChange={(evt) =>
+              props.onMemeChange({ ...props.meme, underline: evt.target.checked })
+            }
           />
           <label htmlFor="f_underline">Underline</label>
           <label htmlFor="f_italic">Italic</label>
-          <input id="f_italic" type="checkbox" checked={props.meme.italic} />
+          <input
+            id="f_italic"
+            type="checkbox"
+            checked={props.meme.italic}
+            onChange={(evt) =>
+              props.onMemeChange({ ...props.meme, italic: evt.target.checked })
+            }
+          />
         </div>
         <div className={style.half}>
           <Button
