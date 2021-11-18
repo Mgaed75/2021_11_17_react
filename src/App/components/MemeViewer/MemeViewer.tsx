@@ -1,8 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./MemeViewer.module.scss";
+import { I_Image, I_Meme } from "../../interfaces/interface";
 
-const MemeViewer = (props) => (
+interface I_Props {
+  meme: I_Meme;
+  image?: I_Image;
+}
+
+const MemeViewer = (props: I_Props) => (
   <svg
     className={styles.MemeViewer}
     data-testid="MemeViewer"
@@ -14,17 +20,22 @@ const MemeViewer = (props) => (
       y={props.meme.y}
       fill={props.meme.color}
       fontSize={props.meme.fontSize}
-      textDecoration={props.meme.underline? 'underline' : 'none'}
-      fontStyle={props.meme.italic? 'italic' : 'none'}
+      textDecoration={props.meme.underline ? "underline" : "none"}
+      fontStyle={props.meme.italic ? "italic" : "none"}
       fontWeight={props.meme.fontWeight}
-    >{props.meme.text}</text>
+    >
+      {props.meme.text}
+    </text>
   </svg>
 );
 
+// remplacer par le typage en ts
+/*
 MemeViewer.propTypes = {
   meme: PropTypes.object.isRequired,
   image: PropTypes.object,
 };
+*/
 
 MemeViewer.defaultProps = {};
 
