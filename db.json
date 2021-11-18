@@ -1,0 +1,14 @@
+{
+  "memes": [
+    {
+      "titre": "mon 1er même", "text": "stop la triche", "x": 390, "y": 530,
+      "fontSize": 28, "color": "#FF6347", "fontWeight": "900",
+      "underline": true, "italic": true, "frameX": 0, "frameY": 0,
+      "imageId": 0
+    }
+  ],
+  "images": [
+    { "id": 0, "url": "img/meme1.jpg", "titre": "meme1", "h": 778, "w": 736 },
+    { "id": 1, "url": "img/meme2.png", "titre": "meme2", "h": 347, "w": 670 }
+  ]
+}
