@@ -31,6 +31,13 @@ class App extends React.Component {
           h: 778,
           w: 736,
         },
+        {
+          id: 1,
+          url: "img/meme2.png",
+          titre: "meme2",
+          h: 347,
+          w: 670,
+        },
       ],
     };
   }
