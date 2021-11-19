@@ -20,6 +20,16 @@
       "customTemplates": {
         "component": "grc-templates/hook_func/TemplateName.js"
       }
+    },
+    "redux": {
+      "path": "src/App/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates": {
+        "component": "grc-templates/redux_func/TemplateName.js"
+      }
     }
   }
 }

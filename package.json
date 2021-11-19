@@ -25,6 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "genHooked": "npx generate-react-cli c --type=hooked",
+    "genRedux": "npx generate-react-cli c --type=redux",
     "json": "json-server -p 5629 db/db.json",
     "startAll": "npm start | npm run json"
   },
