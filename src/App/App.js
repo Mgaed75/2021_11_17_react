@@ -5,6 +5,9 @@ import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 import { REST_ADR, REST_RESSOURCES } from "./config/config";
+import store from "./store/store";
+
+
 class App extends React.Component {
   
   // Constructeur
