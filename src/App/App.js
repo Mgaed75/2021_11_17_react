@@ -4,6 +4,7 @@ import FlexLayout from "./components/FlexLayout/FlexLayout";
 import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
+import { REST_ADR, REST_RESSOURCES } from "./config/config";
 class App extends React.Component {
   // Constructeur
   constructor(props) {
@@ -23,23 +24,19 @@ class App extends React.Component {
         frameY: 0,
         imageId: 0,
       },
-      image: [
-        {
-          id: 0,
-          url: "img/meme1.jpg",
-          titre: "meme1",
-          h: 778,
-          w: 736,
-        },
-        {
-          id: 1,
-          url: "img/meme2.png",
-          titre: "meme2",
-          h: 347,
-          w: 670,
-        },
-      ],
+      image: [],
     };
+  }
+
+  /**
+   * Une fois que le composant a été monté
+   */
+  componentDidMount() {
+    fetch(`${REST_ADR}${REST_RESSOURCES.images}`)
+      // transforme le flux retour du fetch en json
+      .then((flux) => flux.json())
+      // renseigne le tableau d'images du json dans image du state
+      .then((array) => this.setState({ image: array }));
   }
 
   /**
