@@ -6,6 +6,7 @@ import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 import { REST_ADR, REST_RESSOURCES } from "./config/config";
 class App extends React.Component {
+  
   // Constructeur
   constructor(props) {
     super(props);
@@ -24,7 +25,7 @@ class App extends React.Component {
         frameY: 0,
         imageId: 0,
       },
-      image: [],
+      images: [],
     };
   }
 
@@ -36,7 +37,7 @@ class App extends React.Component {
       // transforme le flux retour du fetch en json
       .then((flux) => flux.json())
       // renseigne le tableau d'images du json dans image du state
-      .then((array) => this.setState({ image: array }));
+      .then((array) => this.setState({ images: array }));
   }
 
   /**
@@ -63,14 +64,14 @@ class App extends React.Component {
           <FlexLayout>
             <MemeViewer
               meme={this.state.current}
-              image={this.state.image.find(
+              image={this.state.images.find(
                 (ele) => ele.id === this.state.current.imageId
               )}
             />
             <MemeForm
               meme={this.state.current}
               onMemeChange={(meme) => this.setState({ current: meme })}
-              images={this.state.image}
+              images={this.state.images}
             />
           </FlexLayout>
         </div>
