@@ -104,7 +104,8 @@ const currentReducer = (state = currentInitialState, action) => {
  *  - ressourceReducer
  */
 const store = createStore(
-  combineReducers({ current: currentReducer, ressources: ressourceReducer })
+  combineReducers({ current: currentReducer, ressources: ressourceReducer }),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 // Le store s'abonne à mes reducers (écoute les changements)
 store.subscribe(() => {
