@@ -4,13 +4,18 @@ import "./index.css";
 import App from "./App/App";
 import { Provider } from "react-redux";
 import store from "./App/store/store";
+import { BrowserRouter as Router} from 'react-router-dom'
+
 //import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}> 
     {/* Permet de rendre le redux store disponible pour tous les composants imbriqués */}
-      <App />
+      <Router>
+        {/* Permet de faire des routes */}
+        <App />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

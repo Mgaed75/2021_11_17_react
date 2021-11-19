@@ -7,6 +7,7 @@ import MemeForm from "./components/MemeForm/MemeForm";
 import MemeThumbnail from "./components/MemeThumbnail/MemeThumbnail";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 import store from "./store/store";
+import { Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
   /**
@@ -30,16 +31,32 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <div className="App">
-          <MemeThumbnail images={this.props.images} memes={this.props.memes} />
-          {/* <FlexLayout>
-            <MemeViewer
-              meme={this.props.current}
-              image={this.props.images.find(
-                (ele) => ele.id === this.props.current.imageId
-              )}
-            />
-            <MemeForm />
-          </FlexLayout> */}
+          <Switch>
+            <Route path="/" exact>
+              <h1>Bonjour et Bienvenue !</h1>
+              Voici le nouveau générateur de même - version 2021
+            </Route>
+            <Route path="/thumbnail">
+              <MemeThumbnail
+                images={this.props.images}
+                memes={this.props.memes}
+              />
+            </Route>
+            <Route path="/edit">
+              <FlexLayout>
+                <MemeViewer
+                  meme={this.props.current}
+                  image={this.props.images.find(
+                    (ele) => ele.id === this.props.current.imageId
+                  )}
+                />
+                <MemeForm />
+              </FlexLayout>
+            </Route>
+            <Route path="/">
+              <h1>Erreur 404 : Not Found !! :(</h1>
+            </Route>
+          </Switch>
         </div>
       </React.Fragment>
     );
