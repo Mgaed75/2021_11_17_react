@@ -8,6 +8,7 @@ import MemeThumbnail from "./components/MemeThumbnail/MemeThumbnail";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 import store from "./store/store";
 import { Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 
 class App extends React.Component {
   /**
@@ -30,6 +31,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
+        <Navbar />
         <div className="App">
           <Switch>
             <Route path="/" exact>
