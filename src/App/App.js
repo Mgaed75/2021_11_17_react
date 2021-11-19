@@ -37,11 +37,7 @@ class App extends React.Component {
                 (ele) => ele.id === this.props.current.imageId
               )}
             />
-            <MemeForm
-              // meme={this.state.current}
-              // onMemeChange={(meme) => this.setState({ current: meme })}
-              // images={this.state.images}
-            />
+            <MemeForm />
           </FlexLayout>
         </div>
       </React.Fragment>
