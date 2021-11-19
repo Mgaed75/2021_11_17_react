@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import style from "./MemeForm.module.scss";
+import { connect } from "react-redux";
+import { CURRENT_PUBLIC_ACTIONS } from "../../store/store";
 
 const initialState = {};
 
@@ -159,12 +161,42 @@ function MemeForm(props) {
   );
 }
 
+// Typage des propriétés (+ obligatoire ou non)
 MemeForm.propTypes = {
   meme: PropTypes.object.isRequired,
   images: PropTypes.array.isRequired,
   onMemeChange: PropTypes.func.isRequired,
 };
 
+// Valeurs par défaut des propriétés
 MemeForm.defaultProps = {};
 
-export default MemeForm;
+/**
+ * Envoie des variables aux propriétés du container
+ * @param {*} state état du magasin
+ * @param {*} own les infos du parent
+ * @returns
+ */
+ function mapStateToProps(state, own) {
+  return {
+    ...own,
+    meme: state.current,
+    images: state.ressources.images,
+  };
+}
+/**
+ * Envoie des actions aux propriétés du container
+ * @param {*} dispatch 
+ * @returns 
+ */
+function mapDispatchToProps(dispatch) {
+  return {
+    onMemeChange: (meme) => dispatch({
+      type: CURRENT_PUBLIC_ACTIONS.UPDATE_CURRENT,
+      value: meme
+    })
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MemeForm);
+export const unconnectedMemeForm = MemeForm;
