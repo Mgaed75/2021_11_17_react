@@ -6,6 +6,41 @@
       "fontSize": 28, "color": "#FF6347", "fontWeight": "900",
       "underline": true, "italic": true, "frameX": 0, "frameY": 0,
       "imageId": 0
+    },
+    {
+      "id":1,
+      "titre": "mon 1er même", "text": "stop la triche", "x": 390, "y": 530,
+      "fontSize": 28, "color": "#FF6347", "fontWeight": "900",
+      "underline": true, "italic": true, "frameX": 0, "frameY": 0,
+      "imageId": 0
+    },
+    {
+      "id":2,
+      "titre": "mon 1er même", "text": "stop la triche", "x": 390, "y": 530,
+      "fontSize": 28, "color": "#FF6347", "fontWeight": "900",
+      "underline": true, "italic": true, "frameX": 0, "frameY": 0,
+      "imageId": 0
+    },
+    {
+      "id":3,
+      "titre": "mon 1er même", "text": "stop la triche", "x": 390, "y": 530,
+      "fontSize": 28, "color": "#FF6347", "fontWeight": "900",
+      "underline": true, "italic": true, "frameX": 0, "frameY": 0,
+      "imageId": 0
+    },
+    {
+      "id":4,
+      "titre": "mon 1er même", "text": "stop la triche", "x": 390, "y": 530,
+      "fontSize": 28, "color": "#FF6347", "fontWeight": "900",
+      "underline": true, "italic": true, "frameX": 0, "frameY": 0,
+      "imageId": 0
+    },
+    {
+      "id":5,
+      "titre": "mon 1er même", "text": "stop la triche", "x": 390, "y": 530,
+      "fontSize": 28, "color": "#FF6347", "fontWeight": "900",
+      "underline": true, "italic": true, "frameX": 0, "frameY": 0,
+      "imageId": 0
     }
   ],
   "images": [
