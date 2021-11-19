@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import FlexLayout from "./components/FlexLayout/FlexLayout";
 import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
+import MemeThumbnail from "./components/MemeThumbnail/MemeThumbnail";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 import store from "./store/store";
 
@@ -25,12 +26,12 @@ class App extends React.Component {
    * Méthode de rendu
    */
   render() {
-
     return (
       <React.Fragment>
         <Header />
         <div className="App">
-          <FlexLayout>
+          <MemeThumbnail images={this.props.images} memes={this.props.memes} />
+          {/* <FlexLayout>
             <MemeViewer
               meme={this.props.current}
               image={this.props.images.find(
@@ -38,7 +39,7 @@ class App extends React.Component {
               )}
             />
             <MemeForm />
-          </FlexLayout>
+          </FlexLayout> */}
         </div>
       </React.Fragment>
     );
@@ -60,8 +61,8 @@ function mapStateToProps(state, own) {
 }
 /**
  * Envoie des actions aux propriétés du container
- * @param {*} dispatch 
- * @returns 
+ * @param {*} dispatch
+ * @returns
  */
 function mapDispatchToProps(dispatch) {
   return {};
