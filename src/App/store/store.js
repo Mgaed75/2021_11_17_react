@@ -31,7 +31,7 @@ export const RESSOURCES_PUBLIC_ACTION = Object.freeze({
 });
 
 // Enum d'actions publiques pour le même courant
-const CURRENT_PUBLIC_ACTIONS = Object.freeze({
+export const CURRENT_PUBLIC_ACTIONS = Object.freeze({
     UPDATE_CURRENT: "UPDATE_CURRENT",
     CLEAR_MEME: "CLEAR_MEME",
     SAVE_MEME: "SAVE_MEME",
@@ -85,12 +85,12 @@ function ressourceReducer(state = ressourcesInitialStates, action) {
  * Reducer pour le même courant
  * @param {*} state
  * @param {*} action
- * @returns
+ * @returns le nouveau state
  */
 const currentReducer = (state = currentInitialState, action) => {
   switch (action.type) {
     case CURRENT_PUBLIC_ACTIONS.UPDATE_CURRENT:
-      return { ...action.value };
+      return { ...state, ...action.value };
     case CURRENT_PUBLIC_ACTIONS.CLEAR_MEME:
       return { ...currentInitialState };
     default:
@@ -115,25 +115,5 @@ store.subscribe(() => {
 store.dispatch({
     type: RESSOURCES_PRIVATE_ACTION.INIT,
 })
-
-/*
-// déclenche un changement d'état lors du remplacement d'images
-store.dispatch({
-  type: RESSOURCES_PUBLIC_ACTION.REPLACE_IMAGES_LIST,
-  values: [{ id: 0 }, { id: 1 }],
-});
-
-// déclenche un changement d'état lors du remplacement de mêmes
-store.dispatch({
-  type: RESSOURCES_PUBLIC_ACTION.REPLACE_MEMES_LIST,
-  values: [{ id: 10 }, { id: 11 }],
-});
-
-// déclenche un changement d'état lors d'ajout de même
-store.dispatch({
-  type: RESSOURCES_PUBLIC_ACTION.ADD_MEME,
-  value: [{ id: 20 }],
-});
-*/
 
 export default store;
