@@ -1,0 +1,10 @@
+.FlowLayout {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+}
+.FlowLayout > *{
+    margin-left: 30px; margin-right: 30px; 
+    width: calc(100% * (1/4) - 30px - 1px);
+}
